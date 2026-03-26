@@ -1,0 +1,195 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    color-scheme: light;
+    --sb-bg-from: #F8FAFC;
+    --sb-bg-mid: #EEF2FF;
+    --sb-bg-to: #F5F3FF;
+
+    --sb-border: #E5E7EB;
+    --sb-heading: #111827;
+    --sb-muted: #6B7280;
+    --sb-icon: #64748B;
+
+    --sb-primary: #1E3A8A;
+    --sb-primary-hover: #2563EB;
+
+    --sb-search-border: #CBD5E1;
+    --sb-input-border: #D1D5DB;
+    --sb-focus: #2563EB;
+
+    --sb-sidebar-bg: #FFFFFF;
+    --sb-summary-border: #93C5FD;
+  }
+
+  html,
+  body,
+  #root {
+    height: 100%;
+  }
+
+  body {
+    @apply antialiased;
+    font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial,
+      'Noto Sans', 'Liberation Sans', sans-serif;
+    color: var(--sb-heading);
+  }
+}
+
+@layer components {
+  .sb-bg {
+    background:
+      radial-gradient(900px 550px at 15% 5%, rgba(37, 99, 235, 0.10), transparent 62%),
+      radial-gradient(850px 520px at 85% 20%, rgba(236, 72, 153, 0.10), transparent 60%),
+      radial-gradient(900px 550px at 70% 90%, rgba(245, 158, 11, 0.12), transparent 60%),
+      linear-gradient(135deg, var(--sb-bg-from) 0%, var(--sb-bg-mid) 45%, var(--sb-bg-to) 100%);
+  }
+
+  .sb-header {
+    @apply rounded-2xl bg-white;
+    border: 1px solid #E5E7EB;
+    box-shadow: 0 14px 36px rgba(15, 23, 42, 0.10);
+  }
+
+  .sb-sidebar {
+    @apply rounded-3xl;
+    background: var(--sb-sidebar-bg);
+    border: 1px solid rgba(229, 231, 235, 0.9);
+    box-shadow: 0 18px 50px rgba(15, 23, 42, 0.10);
+  }
+
+  .sb-sidebar-card {
+    @apply rounded-2xl;
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    box-shadow: 0 14px 36px rgba(15, 23, 42, 0.10);
+  }
+
+  .sb-add-card {
+    @apply rounded-3xl;
+    background: linear-gradient(135deg, #F5F3FF 0%, #EEF2FF 100%);
+    border: 1px solid rgba(229, 231, 235, 0.9);
+    box-shadow: 0 18px 50px rgba(15, 23, 42, 0.14);
+  }
+
+  .sb-input {
+    @apply w-full rounded-2xl px-4 py-3 text-sm outline-none ring-0 transition;
+    background: #F9FAFB;
+    border: 1px solid var(--sb-search-border);
+    color: var(--sb-heading);
+  }
+
+  .sb-input:focus {
+    border-color: var(--sb-focus);
+    box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.18);
+  }
+
+  .sb-textarea {
+    @apply w-full rounded-2xl px-4 py-3 text-sm outline-none ring-0 transition resize-none;
+    background: #F9FAFB;
+    border: 1px solid var(--sb-search-border);
+    color: var(--sb-heading);
+  }
+
+  .sb-input-white {
+    @apply w-full rounded-2xl px-4 py-3 text-sm outline-none ring-0 transition;
+    background: #FFFFFF;
+    border: 1px solid var(--sb-input-border);
+    color: var(--sb-heading);
+  }
+
+  .sb-input-white:focus {
+    border-color: var(--sb-focus);
+    box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.18);
+  }
+
+  .sb-textarea-white {
+    @apply w-full rounded-2xl px-4 py-3 text-sm outline-none ring-0 transition resize-none;
+    background: #FFFFFF;
+    border: 1px solid var(--sb-input-border);
+    color: var(--sb-heading);
+  }
+
+  .sb-btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-2xl px-4 py-3 text-xs font-semibold transition;
+  }
+
+  .sb-btn-gradient {
+    @apply inline-flex items-center justify-center gap-2 rounded-2xl px-4 py-3 text-xs font-semibold transition text-white;
+    background: linear-gradient(135deg, #2563EB 0%, #1E3A8A 100%);
+    box-shadow: 0 14px 30px rgba(37, 99, 235, 0.22);
+    @apply active:translate-y-px;
+    @apply disabled:cursor-not-allowed disabled:bg-zinc-300 disabled:text-white disabled:shadow-none disabled:transform-none;
+  }
+
+  .sb-btn-gradient:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 18px 40px rgba(37, 99, 235, 0.26);
+  }
+
+  .sb-btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 rounded-2xl px-4 py-3 text-xs font-semibold transition;
+    background: rgba(255, 255, 255, 0.7);
+    border: 1px solid rgba(203, 213, 225, 0.9);
+    color: var(--sb-heading);
+    @apply active:translate-y-px;
+    @apply disabled:cursor-not-allowed disabled:opacity-60;
+  }
+
+  .sb-pill {
+    @apply inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs font-medium;
+    background: rgba(255, 255, 255, 0.7);
+    border: 1px solid color-mix(in oklab, var(--sb-border) 80%, transparent);
+    color: var(--sb-muted);
+  }
+
+  .sb-note-card {
+    @apply rounded-3xl;
+    border: 1px solid rgba(255, 255, 255, 0.9);
+    box-shadow: 0 18px 50px rgba(15, 23, 42, 0.14);
+  }
+
+  .sb-modal {
+    @apply rounded-[28px] bg-white;
+    border: 1px solid rgba(229, 231, 235, 0.95);
+    box-shadow: 0 30px 90px rgba(15, 23, 42, 0.24);
+  }
+}
+
+@layer utilities {
+  @keyframes sb-fade-up {
+    from {
+      opacity: 0;
+      transform: translateY(8px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .sb-animate-fade-up {
+    animation: sb-fade-up 450ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+  }
+
+  .sb-hover-lift {
+    @apply transition-all duration-300;
+  }
+  .sb-hover-lift:hover {
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 22px 70px rgba(15, 23, 42, 0.18);
+  }
+
+  .sb-scrollbar::-webkit-scrollbar {
+    height: 10px;
+    width: 10px;
+  }
+  .sb-scrollbar::-webkit-scrollbar-thumb {
+    background: rgb(212 212 216);
+    border-radius: 999px;
+    border: 3px solid rgb(250 250 250);
+  }
+  .sb-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+}
