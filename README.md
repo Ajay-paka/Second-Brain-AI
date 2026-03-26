@@ -30,6 +30,7 @@ The frontend is built with React + Vite, while automation, AI processing, and no
 ### Automation / Backend Logic
 
 * n8n Webhook Workflows
+(screenshots/Second-Brain-workflow.png)
 
 ### Storage
 
@@ -62,21 +63,6 @@ Flow:
 
 6. UI updates instantly
 
-## 📂 Project Structure
-
-```text
-Second-Brain-AI/
-│
-├── frontend/
-│   ├── src/
-│   ├── public/
-│   ├── components/
-│   ├── hooks/
-│   └── package.json
-│
-├── vercel.json
-└── README.md
-```
 
 ## ⚙️ Local Setup
 
@@ -84,7 +70,7 @@ Clone repository:
 
 ```bash
 git clone https://github.com/Ajay-paka/Second-Brain-AI.git
-cd Second-Brain-AI/frontend
+cd Second-Brain-AI/
 ```
 
 Install dependencies:
