@@ -30,7 +30,8 @@ The frontend is built with React + Vite, while automation, AI processing, and no
 ### Automation / Backend Logic
 
 * n8n Webhook Workflows
-(screenshots/Second-Brain-workflow.png)
+  
+![Second-Brain-AI Workflow](screenshots/Second-Brain-workflow.png)
 
 ### Storage
 
