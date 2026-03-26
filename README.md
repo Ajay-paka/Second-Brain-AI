@@ -7,6 +7,8 @@ The frontend is built with React + Vite, while automation, AI processing, and no
 
 🔗 https://second-brain-ai-two.vercel.app
 
+![Second-Brain-AI Frontend](screenshots/Second-Brain-UI.png)
+
 ## ✨ Features
 
 * Smart note creation through a clean UI
